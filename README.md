@@ -1,5 +1,6 @@
+# 👨‍💻 Luan Tonetto
 # Python-Curso-em-Video
-Realizei todas as 56 aulas sobre Python do Canal Curso em Video.
-Prof: Gustavo Guanabara.
-Mundo 1 e Mundo 2.
-Foram Feitos Todos os 56 exercicios em um unico arquivo.
+**Realizei o Curso de Python do Canal Curso em Video,Prof: Gustavo Guanabara**
+**Foram 56 aulas contendo 1 Exercício Cada**
+**Anexei todos os Exercícios em um arquivo.**
+**Mundo 1 e Mundo 2**

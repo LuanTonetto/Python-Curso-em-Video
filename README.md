@@ -1,6 +1,6 @@
 # 👨‍💻 Luan Tonetto
 # Python-Curso-em-Video
-**Realizei o Curso de Python do Canal Curso em Video,Prof: Gustavo Guanabara**
+**Realizei o Curso de Python do Canal Curso em Video Prof: Gustavo Guanabara**
 
 **Foram 56 aulas contendo 1 Exercício Cada**
 

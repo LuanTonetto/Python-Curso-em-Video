@@ -103,13 +103,14 @@ pago = (dias*60)+(km*0.15)
 print('O total a pagar é de R${:.2f}'.format(pago))
 
 # importando biblioteca math
+import math
 num = int(input('Digite um numero'))
 raiz = math.sqrt(num)
 print('A raiz de {} é igual a {}'.format(num, raiz))
 print('A raiz de {} é igual a {}'.format(num, math.ceil))
 print('A raiz de {} é igual a {}'.format(num, math.floor))
 num = int(input('Digite um numero'))
-raiz = sqrt(num)
+raiz = math.sqrt(num)
 print('A raiz de {} é igual a {}'.format(num, raiz))
 
 # gerar numero aleatorio
@@ -117,7 +118,8 @@ num = random.randint(1, 100)
 print(num)
 
 # importando biblioteca do site python
-print(emoji.emojize('Olá Luan :octopus:'))
+import time
+time.sleep(1)
 
 #quebrando numero com import
 import math 
@@ -705,6 +707,318 @@ print('A media de idade do grupo é de {} anos'.format(mediaidade))
 print('O Homem mais velho tem {} anos e se chama {}'.format(maioridadehomem,nomevelho))
 print(' Ao todo são {} mulheres com menos de 20 anos '.format(totmulher20))
 
-#mundo 3
+#Validção de dados
+sexo = str(input('Informe seu sexo: [M/F] ')).strip().upper()
+while sexo not in 'MmFf':
+    sexo = str(input('Dados inválidos. Por favor informe seu sexo')).strip().upper()
+print('Sexo {} registrado com sucesso'.format(sexo))
 
+#Variação Validação de dados
+masc = fem = cont = 0 
+while True : 
+    sexo=str(input('Digite o sexo [M/F]:  ')).upper().strip()
+    if sexo in'mM':
+        masc += 1
+        cont += 1
+        print('Computado')
+    elif sexo in 'fF':
+        fem += 1
+        cont += 1
+        print('Computado') 
+    else:
+        print('Voce digitou errado, tente novamente')
+        
+    resp =str(input('Deseja continuar? [S/N]')).upper().strip()
+    if resp in 'nN':
+        print('saindo')
+        break
+    
+print(f'Voce digitou {masc} masculinos e {fem} femininos com total de {cont} digitações')
 
+#Jogo da advinhação 2.0 exemplo1
+from random import randint
+print('Vou pensar em um numero entre 0 e 10. tente advinhar...')
+contador = 0
+numero = randint(0,10)
+acertou = False
+while not acertou:
+    jogador = int(input('Qual é o seu palpite?  '))
+    contador += 1
+    if jogador == numero:
+        acertou=True
+    else:
+        if jogador < numero:
+            print('Mais... tente mais uma vez')
+        elif jogador > numero:
+            print('Menos... tente mais uma vez')
+print('Acertou com {} tentativas.'.format(contador))
+
+#exemplo 2 
+from random import randint
+palpites = 0
+computador = randint(0,10)
+print('PC: Estou pensando em um numero de 0 a 10 qual é???')
+while True:
+    resposta=int(input('Digite um numero de 0 a 10: '))
+    if resposta > computador:
+        palpites +=1
+        print('Voce chutou um valor maior')
+    elif resposta < computador:
+        palpites +=1
+        print('Voce chutou um valor menor')
+    elif resposta == computador:
+        print(f'Voce acertou com {palpites} palpites')
+        break
+
+#Criando menu com opções
+n1=int(input('Primeiro Valor:   '))
+n2=int(input('Primeiro Valor:   '))
+opção=0
+while opção != 5:
+    print('''    [1] Somar
+    [2] multiplicar
+    [3] maior
+    [4] novos numeros
+    [5] sair do programa''')
+    opção=int(input('Qual é a sua opção?    '))
+    if opção == 1:
+        soma = n1+n2
+        print('A soma ente {} + {} é {}'.format(n1,n2,soma))
+    elif opção == 2:
+        produto = n1*n2
+        print('O resultado de {} x {} é {}'.format(n1,n2,produto))
+    elif opção == 3:
+        if n1>n2:
+            maior=n1
+        else:
+            maior = n2
+        print('Entre o valor {} e {} o maior é {}'.format(n1,n2,maior))
+    elif opção == 4:
+        print('Informe os numeros novamente.')
+        n1=int(input('Primeiro Valor:   '))
+        n2=int(input('Primeiro Valor:   '))
+    elif opção == 5:
+        print('Finalizando')
+    else:
+        print('Opção invalida. tente novamente.')
+
+print('Fim do programa.')
+
+#Calculo Fatorial
+#modo1 
+import math
+n = int(input('Digite um numero para calcular fatorial: '))
+f = math.factorial(n)
+print('O fatorial de {} é {}'.format(n,f))
+
+#modo2
+n = int(input('Digite um numero para calcular fatorial: '))
+c = n
+f = 1
+while c > 0 :
+    print('{}   '.format(c),end ='')
+    print('x 'if c > 1 else ' = ', end='')
+    f *=c
+    c -= 1  
+print('{}'.format(f))
+
+#Progressao aritmetica 2.0
+primeiro = int(input('Primeiro Termo:   '))
+razao = int(input('Razao da PA: '))
+termo = primeiro
+cont = 1 
+while cont <= 10:
+    print('{}->'.format(termo), end="")
+    termo += razao
+    cont += 1 
+print('FIM')
+
+#Progressao aritmetica melhorada
+primeiro = int(input('Primeiro Termo:   '))
+razao = int(input('Razao da PA: '))
+termo = primeiro
+cont = 1 
+total = 0 
+mais = 10
+while mais != 0:
+    total=total+mais
+    while cont <= total:
+        print('{}->'.format(termo), end="")
+        termo += razao
+        cont += 1 
+    print('PAUSA')
+    mais = int(input('Quantos termos voce quer mostrar a mais?  '))
+print('Progressão finalizada com {} termos mostrados.'.format(total))
+
+#sequencia fibonacci
+print('-'*30)
+print('Sequencia de fibonacci')
+print('-'*30)
+n = int(input('Quantos termos voce quer mostrar? '))
+t1=0
+t2=1
+print('~'*30)
+print('{} -> {}'.format(t1,t2),end='')
+cont = 3
+while cont <=n :
+    t3= t1+t2
+    print(' -> {}'.format(t3),end='')
+    t1=t2
+    t2=t3
+    cont +=1 
+print('-> FIM')
+
+#Tratando varios valores v1.0
+num = cont = soma = 0 
+num = int(input('Digite um numero (999 para parar): '))
+while num != 999:
+    soma += num 
+    cont += 1
+    num = int(input('Digite um numero (999 para parar): '))
+print('Voce digitou {} numeros.'.format(cont,soma))
+
+#Maior e menor valores
+resp = 'S'
+soma = quant = media = maior = menor = 0
+while resp in 'Ss':
+    num = int(input('Digite um numero: '))
+    soma += num
+    quant += 1 
+    if quant == 1:
+        maior = menor = num
+    else:
+        if num > maior :
+            maior = num
+        if num < menor:
+            menor = num
+    resp=str(input('Quer continuar? [S/N] ')).upper().strip()[0]
+media = soma / quant
+print('Voce digitou {} e a media foi {} '.format(quant,media))
+print('O maior valor foi {} e o menor foi {} '.format(maior,menor))
+
+# numeros com flag
+cont=soma=0
+while True:
+    num=int(input('Digite um numero ou 999 para sair:  '))
+    if num == 999 :
+        break
+    soma+= num
+    cont += 1 
+print(f'Voce digitou {cont} numeros e a soma foi {soma}')
+
+#tabuada com while true
+while True:
+    tab=int(input('Digite a tabuada que deseja consultar ou valor negativo para sair: '))
+    if tab <=-1:
+        break
+    for cont in range (1,11):
+        mult= tab*cont
+        print(f'{tab} x {cont} = {mult}')  
+    
+#jogo do par ou impar
+from random import randint
+vitorias = 0
+while True:
+    jogador = int(input('Digite um valor: '))
+    computador = randint(0, 10)
+    total = jogador + computador
+    tipo = ' '
+
+    while tipo not in 'PpIi':
+        tipo = str(input('Par ou Impar? [P/I] ')).strip().upper()[0]
+    print(f'Voce jogou {jogador} e o computador {computador}')
+    if tipo == 'P':
+        if total % 2 == 0:
+            print('Você venceu!')
+            vitorias += 1
+        else:
+            print('Você perdeu!')
+            break
+    elif tipo == 'I':
+        if total % 2 == 1:
+            print('Você venceu!')
+            vitorias += 1
+        else:
+            print('Você perdeu!')
+            break
+print(f'Game over! Você venceu {vitorias} vezes.')
+
+#analise de dados de grupo
+tot18=totH=totM20=0
+while True:
+    idade= int(input('Idade: '))
+    sexo = str(input('Sexo: [M/F]')).strip().upper()[0]
+    while sexo not in 'MF':
+        sexo= str(input('sexo: [M/F]')).strip().upper()[0]
+    if idade >=18:
+        tot18+=1
+    if sexo == 'M':
+        totH+=1
+    if sexo =='F' and idade <20:
+        totM20+=1
+    resp=' '
+    while resp not in 'SN':
+        resp= str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+    if resp == 'N':
+        break
+
+print(f'Total de pessoas com mais de 18 anos:{tot18}')
+print(f'Ao todo temos {totH} homens cadastrados')
+print(f'e Temos {totM20} Mulheres com menos de 20 anos ')
+
+#Estatisticas em produtos
+total=totmil=menor=cont=0
+barato=' '
+while True:
+    nome = str(input('Qual o nome do produto: '))
+    preco= float(input('Qual o preço do produto R$: '))
+    cont+=1
+    total+=preco
+    if preco > 1000:
+        totmil +=1
+    if cont ==1:
+        menor==preco
+        barato=nome
+    else:
+        if preco < menor:
+            menor = preco
+            barato=nome
+    resp=' '
+    while resp not in 'SN':
+        resp=str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+    if resp == 'N':
+        break
+print('Fim')
+print(f'O total da compra foi R${total:.2f}')
+print(f'Temos {totmil} item custando mais de R$1000,00 R$')
+print(f'O produto mais barato foi {barato} que custa R${menor:.2f}')
+
+#simulador de caixa eletronico
+print('='*30)
+print('BANCO CENTRAL')
+print('='*30)
+valor=int(input('Qual valor quer sacar R$: '))
+total= valor
+ced=50
+totced=0
+while True:
+    if total >= ced:
+        total -= ced
+        totced += 1
+    else:
+        if totced >0:
+            print(f'Total de {totced} cédulas de R${ced}')
+        if ced==50:
+            ced = 20
+        elif ced == 20:
+            ced=10
+        elif ced ==10:
+            ced=1
+        totced=0
+        if total==0:
+            break
+print('='*30)
+print('Volte sempre ao BANCO CENTRAL!')
+print('='*30)
+
+#Fim do Mundo 2
